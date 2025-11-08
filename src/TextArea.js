@@ -24,7 +24,7 @@ const TextArea = () => {
     let newArray = [];
     for (let key in object) {
       if (key) {
-        newArray = [...newArray, { key: object[key], value: object[key] }];
+        newArray = [...newArray, { [key]: object[key], value: object[key] }];
       }
     }
 
@@ -35,7 +35,7 @@ const TextArea = () => {
   useEffect(() => {
     countingWords();
   }, [userInput]);
-
+console.log(userData)
   return (
     <div className="word-counter-container" style={{ margin: "auto" }}>
       <h1 className="word-counter-title" style={{ textAlign: "center" }}>
