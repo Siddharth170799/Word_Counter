@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const TextArea = () => {
   const [userInput, setUserInput] = useState("");
@@ -11,7 +11,7 @@ const TextArea = () => {
     setTypedValue(typedValue);
   };
 
-  const countingWords = () => {
+  const countingWords = useCallback(() => {
     let object = {};
     for (let i = 0; i < typedValue.length; i++) {
       if (object[typedValue[i]]) {
@@ -30,11 +30,11 @@ const TextArea = () => {
 
     const sortedData = newArray.sort((a, b) => b.value - a.value);
     setUserData(sortedData);
-  };
+  }, [typedValue]);
 
   useEffect(() => {
     countingWords();
-  }, [userInput]);
+  }, [userInput, countingWords]);
 
   return (
     <div className="word-counter-container" style={{ margin: "auto" }}>
