@@ -36,3 +36,134 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==============================
+   Word Counter Styles
+   ============================== */
+
+.word-counter-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.word-counter-title {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.textarea-wrapper {
+  margin-bottom: 30px;
+}
+
+.word-counter-textarea {
+  border: 2px solid #e1e5e9;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  min-height: 120px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.word-counter-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 3px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.word-counter-textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.word-frequencies {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px;
+}
+
+.frequencies-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.frequencies-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+.word-count-item {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 20px;
+  margin: 10px auto;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  font-weight: 500;
+  font-size: 1.1rem;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.word-count-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.word-count-item:empty {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .word-counter-container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  .word-counter-title {
+    font-size: 2rem;
+  }
+
+  .word-counter-textarea {
+    max-width: 100%;
+  }
+}
