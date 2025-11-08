@@ -35,7 +35,7 @@ const TextArea = () => {
   useEffect(() => {
     countingWords();
   }, [userInput]);
-console.log(userData)
+
   return (
     <div className="word-counter-container" style={{ margin: "auto" }}>
       <h1 className="word-counter-title" style={{ textAlign: "center" }}>
